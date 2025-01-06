@@ -1,11 +1,12 @@
 .footer{
     display: flex;
-    margin: 170px 0 0;
+    margin: auto 40px 24px ;
     justify-content: space-between ;
     height: 20px;
+    align-items: center;
 }
 
-p{
+.footer__text{
     margin: 0;
     font-family: 'Cabinet Grotesk', sans-serif, serif;
     font-size: 16px;
