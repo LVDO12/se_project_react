@@ -1,0 +1,17 @@
+.footer{
+    display: flex;
+    margin: 170px 0 0;
+    justify-content: space-between ;
+    height: 20px;
+}
+
+p{
+    margin: 0;
+    font-family: 'Cabinet Grotesk', sans-serif, serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}

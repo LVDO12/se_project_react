@@ -1,0 +1,41 @@
+.item-card{
+    list-style: none;
+    height: 328px;
+    width: 325px;
+    display: flex;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+
+.item-card__picture{
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+}
+
+.item-card_title-container{
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 5px;
+    top: 15px;
+    padding: 0 12px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.item-card__title{
+    font-family: 'Cabinet Grotesk', sans-serif, serif;
+    font-style: medium;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    height: 20px;
+}
