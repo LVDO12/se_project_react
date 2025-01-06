@@ -13,7 +13,4 @@ export const getWeather = ({ latitude, longitude }, APIkey) => {
       data.main.temp = Math.floor(data.main.temp);
       return data;
     })
-    .catch((err) => {
-      console.log(err);
-    });
 };
