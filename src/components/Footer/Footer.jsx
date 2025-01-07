@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
-function Header() {
+function Footer() {
   return (
     <footer className="footer">
       <p className="footer__text">Developed by LV</p>
@@ -10,4 +10,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Footer;

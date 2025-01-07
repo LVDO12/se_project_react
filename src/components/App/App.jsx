@@ -14,11 +14,14 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState({
     isOpen: false,
     type: null,
-    selectedItem: null,
   });
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const handleOpenModal = (modalType, item) => {
-    setIsModalOpen({ type: modalType, isOpen: true, selectedItem: item });
+    setIsModalOpen({ type: modalType, isOpen: true});
+    if(item){
+      setSelectedItem(item);
+    }
   };
 
   const handleCloseModal = () => {
@@ -29,9 +32,9 @@ function App() {
     getWeather(location, APIkey)
       .then((data) => {
         setWeatherData(data);
-        setIsLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(()=>setIsLoading(false));
   }, []);
 
   if (!isLoading) {
@@ -50,7 +53,7 @@ function App() {
           isOpen={isModalOpen.type === "garment"}
         >
           <fieldset className="form__set">
-            <label htmlFor="" className="form__field">
+            <label className="form__field">
               Name
               <input
                 type="text"
@@ -59,7 +62,7 @@ function App() {
                 id="name"
               />
             </label>
-            <label htmlFor="" className="form__field">
+            <label className="form__field">
               Image
               <input
                 type="url"
@@ -72,7 +75,7 @@ function App() {
           <fieldset className="form__set form__radio-set">
             <legend className="form__title form__legend__title">
               Select the weather type:
-              <label htmlFor="" className="form__radio-field ">
+              <label className="form__radio-field ">
                 Hot
                 <input
                   type="radio"
@@ -81,7 +84,7 @@ function App() {
                   className="form__radio-input form__input"
                 />
               </label>
-              <label htmlFor="" className="form__radio-field">
+              <label className="form__radio-field">
                 Warm
                 <input
                   type="radio"
@@ -90,7 +93,7 @@ function App() {
                   className="form__radio-input form__input"
                 />
               </label>
-              <label htmlFor="" className="form__radio-field">
+              <label className="form__radio-field">
                 Cold
                 <input
                   type="radio"
@@ -106,7 +109,7 @@ function App() {
           isOpen={isModalOpen.type === "item"}
           onClose={handleCloseModal}
           name="item"
-          item={isModalOpen.selectedItem}
+          item={selectedItem}
         />
         <Footer />
       </div>

@@ -8,9 +8,6 @@ function Header({ openModal }) {
     month: "long",
     day: "numeric",
   });
-  const handleButton = () => {
-    openModal();
-  };
 
   return (
     <header className="header">
@@ -22,7 +19,7 @@ function Header({ openModal }) {
         <button
           className="header__button"
           type="button"
-          onClick={() => handleButton()}
+          onClick={openModal}
         >
           + Add clothes
         </button>
