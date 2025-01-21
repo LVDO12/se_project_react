@@ -1,19 +1,19 @@
 import React from "react";
 import "./ModalWithForm.css";
-import "../Form/Form.css";
-import useModalClose from "../../hook/useModalClose";
 
-function ModalWithForm({ children, title, buttonText, name, onClose, isOpen }) {
-    useModalClose(isOpen, onClose);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onClose();
-  };
-
+function ModalWithForm({
+  children,
+  title,
+  buttonText,
+  formName,
+  onClose,
+  isOpen,
+  handleSubmit,
+}) {
   return (
     <div
-      className={`modal modal_type_${name} ${
-        isOpen ? `modal_type_${name}_open` : ""
+      className={`modal modal_type_${formName} ${
+        isOpen ? `modal_type_${formName}_open` : ""
       }`}
     >
       <div className="modal__container">
@@ -25,10 +25,14 @@ function ModalWithForm({ children, title, buttonText, name, onClose, isOpen }) {
         ></button>
         <form className="modal__form" onSubmit={handleSubmit}>
           {children}
+          <button
+            className="modal__button_save "
+            id="save-button"
+            type="submit"
+          >
+            {buttonText}
+          </button>
         </form>
-        <button className="modal__button_save" id="save-button" type="submit">
-          {buttonText}
-        </button>
       </div>
     </div>
   );

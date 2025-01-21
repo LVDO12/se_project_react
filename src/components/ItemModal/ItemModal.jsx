@@ -3,19 +3,19 @@ import "./ItemModal.css";
 import "../ModalWithForm/ModalWithForm.css";
 import useModalClose from "../../hook/useModalClose";
 
-function ItemModal({ name, isOpen, item, onClose }) {
+function ItemModal({ formName, isOpen, item, onClose, handleDeleteImage }) {
   useModalClose(isOpen, onClose);
 
   return (
     <div
-      className={`modal modal_type_${name} ${
-        isOpen ? `modal_type_${name}_open` : ""
+      className={`modal modal_type_${formName} ${
+        isOpen ? `modal_type_${formName}_open` : ""
       }`}
     >
       <div className="modal__container">
         {item && (
           <>
-            <img src={item.link} alt={item.name} className="item__image" />
+            <img src={item.imageUrl} alt={item.name} className="item__image" />
             <p className="item__name">{item.name}</p>
             <p className="item__weather">Weather: {item.weather}</p>
           </>
@@ -25,6 +25,12 @@ function ItemModal({ name, isOpen, item, onClose }) {
           id="close-button"
           onClick={onClose}
         ></button>
+        <button
+          className="modal_type_garment__button_delete"
+          onClick={handleDeleteImage}
+        >
+          Delete Item
+        </button>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@
     position: absolute;
     max-width: 1440px;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,6 +13,7 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+    overflow-y: auto;
 }
 
 .modal_type_garment_open{
@@ -33,7 +34,8 @@
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    height: fit-content
+    height: fit-content;
+    
 }
 
 .modal__button_close{
@@ -72,12 +74,12 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    margin: 0 0 36px 28px; 
+    margin: 32px 0 36px 28px; 
     color: #ffffff;
     height: 36px;
     width: 124px;
     border-radius: 4px;
-    padding: 8px 16px;
+    padding: 0;
     background-color: rgba(0, 0, 0, 1);
     border-style: none;
     text-align: center;
@@ -92,4 +94,19 @@
 .modal__button_save:disabled{
     background-color: rgba(0, 0, 0, 0.3);
     transition: background-color 0.2s linear;
+}
+
+.modal_type_garment__button_delete{
+    font-family: 'Cabinet Grotesk', sans-serif, serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    border-style: none;
+    background-color: transparent;
+    position: absolute;
+    color: #FF4D00;
+    right: 32px;
+    bottom: 68px;
+    margin: 0;
+    padding: 0;
 }

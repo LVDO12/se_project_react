@@ -8,7 +8,7 @@ function ItemCard({ item, handleOpenModal }) {
         <p className="item-card__title">{item.name}</p>
       </div>
       <img
-        src={item.link}
+        src={item.imageUrl}
         alt={item.name}
         className="item-card__picture"
         onClick={() => handleOpenModal(item)}
