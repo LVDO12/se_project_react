@@ -105,7 +105,7 @@ function App() {
               }
             />
             <Route
-              path="/Profile"
+              path="/profile"
               element={
                 <Profile
                   handleOpenImage={(item) => handleOpenModal("item", item)}
