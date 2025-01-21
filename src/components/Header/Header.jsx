@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import avatar from "../../assets/Avatar.png";
 import logo from "../../assets/Logo.png";
-import ToggleSwitch from "../Switch/ToggleSwitch";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
 function Header({ openModal }) {
   const currentDate = new Date().toLocaleString("default", {
