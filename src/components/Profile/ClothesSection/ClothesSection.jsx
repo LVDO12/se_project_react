@@ -12,7 +12,6 @@ function ClothesSection({ handleOpenModal, handleOpenImage, clothingItems }) {
         </button>
       </div>
       <ul className="section__gallery">
-        {console.log(clothingItems)}
         {clothingItems.map((item) => {
           return (
             <ItemCard

@@ -3,7 +3,9 @@ import "./ItemModal.css";
 import "../ModalWithForm/ModalWithForm.css";
 import useModalClose from "../../hook/useModalClose";
 
+
 function ItemModal({ formName, isOpen, item, onClose, handleDeleteImage }) {
+
   useModalClose(isOpen, onClose);
 
   return (

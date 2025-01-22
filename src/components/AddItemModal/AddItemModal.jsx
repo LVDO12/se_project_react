@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import useModalClose from "../../hook/useModalClose";
 import "./AddItemModal.css";
 import "../ModalWithForm/ModalWithForm.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function AddItemModal({ onClose, isOpen, onAddItem }) {
-  useModalClose(isOpen, onClose);
 
   const [name, setName] = useState("");
   const [link, setLink] = useState("");

@@ -59,6 +59,7 @@ function App() {
     postItems({ name, imageUrl: link, weather: weatherType })
       .then((data) => {
         setClothingItem([data, ...clothingItems]);
+        handleCloseModal();
       })
       .catch((err) => console.log(err));
   };

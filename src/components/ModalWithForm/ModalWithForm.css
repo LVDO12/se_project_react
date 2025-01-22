@@ -1,11 +1,11 @@
 .modal{
     z-index: 999;
     background-color:rgba(0, 0, 0, 0.3);
-    position: absolute;
+    position: fixed;
     max-width: 1440px;
     width: 100%;
     height: 100%;
-    margin: 0;
+    margin: auto;
     padding: 0;
     display: flex;
     visibility: hidden;
@@ -13,7 +13,8 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
-    overflow-y: auto;
+    top: calc(50% + var(--div-height));
+    
 }
 
 .modal_type_garment_open{

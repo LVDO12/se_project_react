@@ -1,29 +1,32 @@
 const baseUrl = "http://localhost:3001";
 
-const checkResponse = (res) => {
+export const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
   }
   return Promise.reject(`Error: ${res.status}`);
 };
 
+function request(url, option) {
+  return fetch(url, option).then(checkResponse);
+}
+
 export const getItems = () => {
-  return fetch(`${baseUrl}/items`).then(checkResponse);
+  return request(`${baseUrl}/items`);
 };
 
 export const postItems = (item) => {
-  return fetch(`${baseUrl}/items`, {
+  return request(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(item),
-  }).then(checkResponse);
+  })
 };
 
 export const deleteItems = (itemId) => {
-    return fetch(`${baseUrl}/items/${itemId}`,{
-        method: "DELETE",
-    })
-    .then(checkResponse)
+  return request(`${baseUrl}/items/${itemId}`, {
+    method: "DELETE",
+  })
 };

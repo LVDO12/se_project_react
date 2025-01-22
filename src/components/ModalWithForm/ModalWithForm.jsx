@@ -1,5 +1,6 @@
 import React from "react";
 import "./ModalWithForm.css";
+import useModalClose from "../../hook/useModalClose";
 
 function ModalWithForm({
   children,
@@ -10,6 +11,9 @@ function ModalWithForm({
   isOpen,
   handleSubmit,
 }) {
+  
+  useModalClose(isOpen, onClose);
+
   return (
     <div
       className={`modal modal_type_${formName} ${
