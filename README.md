@@ -8,7 +8,6 @@ The idea of the application is pretty simple - we make a call to an API, which t
 
 - [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
 
-# Back end process
 ## This project is to create a server for the WTWR application. The project include some basic function:
 - Get images and users data.
 - Return images base on unique user's ID.
