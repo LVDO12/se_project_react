@@ -1,0 +1,113 @@
+.modal{
+    z-index: 999;
+    background-color:rgba(0, 0, 0, 0.3);
+    position: fixed;
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+    top: calc(50% + var(--div-height));
+    
+}
+
+.modal_type_garment_open{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal_type_item_open{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal__container{
+    background-color: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    height: fit-content;
+    
+}
+
+.modal__button_close{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background: url('../../assets/Union.png') center no-repeat;
+    top:20px;
+    right: 28px;
+    border-style: none;
+    padding: 0;
+}
+
+.modal__title{
+    margin-top: 28px;
+    margin-left: 28px;
+    font-family: 'Cabinet Grotesk', sans-serif, serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.modal__form{
+    border-style: none;
+    margin-top: 24px;
+}
+
+.modal__button_save{
+    font-family: 'Cabinet Grotesk', sans-serif, serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 32px 0 36px 28px; 
+    color: #ffffff;
+    height: 36px;
+    width: 124px;
+    border-radius: 4px;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 1);
+    border-style: none;
+    text-align: center;
+    transition: background-color 0.2s linear;
+}
+
+.modal__button_save:hover{
+   background-color: rgba(0, 0, 0, 0.6); 
+   transition: background-color 0.2s linear;
+}
+
+.modal__button_save:disabled{
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s linear;
+}
+
+.modal_type_garment__button_delete{
+    font-family: 'Cabinet Grotesk', sans-serif, serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    border-style: none;
+    background-color: transparent;
+    position: absolute;
+    color: #FF4D00;
+    right: 32px;
+    bottom: 68px;
+    margin: 0;
+    padding: 0;
+}

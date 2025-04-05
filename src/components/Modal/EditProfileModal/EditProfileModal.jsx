@@ -31,7 +31,6 @@ function EditProfileModal({ onClose, isOpen, onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ name: editData.name, avatar: editData.avatar });
-    onClose();
   };
 
   return (

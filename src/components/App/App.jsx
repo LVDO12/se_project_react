@@ -249,6 +249,7 @@ function App() {
                 handleOpenModal("signup");
               }}
               onSubmit={handleSignin}
+              onClose={handleCloseModal}
             />
             <SignupModal
               isOpen={isModalOpen.type === "signup"}
@@ -257,10 +258,12 @@ function App() {
                 handleOpenModal("login");
               }}
               onSubmit={handleRegister}
+              onClose={handleCloseModal}
             />
             <AddItemModal
               isOpen={isModalOpen.type === "garment"}
               onAddItem={handleAddItemSubmit}
+              onClose={handleCloseModal}
             />
             <ItemModal
               isOpen={isModalOpen.type === "item"}
@@ -268,6 +271,7 @@ function App() {
               item={selectedItem}
               handleDeleteImage={handleDeleteImage}
               onCardLike={handleCardLike}
+              onClose={handleCloseModal}
             />
             <EditProfileModal
               onClose={handleCloseModal}

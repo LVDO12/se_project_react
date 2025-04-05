@@ -3,7 +3,7 @@ import "./SignupModal.css";
 import "../ModalWithForm/ModalWithForm.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function SignupModal({ isOpen, onSubmit, openLoginModal }) {
+function SignupModal({ isOpen, onSubmit, openLoginModal, onClose }) {
   const [regData, setRegData] = useState({
     name: "",
     email: "",
@@ -36,6 +36,7 @@ function SignupModal({ isOpen, onSubmit, openLoginModal }) {
       formName="signup"
       isOpen={isOpen}
       handleSubmit={handleSubmit}
+      onClose={onClose}
     >
       <fieldset className="form__set">
         <label className="form__field">

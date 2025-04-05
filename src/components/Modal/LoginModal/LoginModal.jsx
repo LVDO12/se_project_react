@@ -3,7 +3,7 @@ import "./LoginModal.css";
 import "../ModalWithForm/ModalWithForm.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function LoginModal({ isOpen, onSubmit, openSignupModal }) {
+function LoginModal({ isOpen, onSubmit, openSignupModal, onClose }) {
   const [logData, setLogData] = useState({
     email: "",
     password: "",
@@ -29,6 +29,7 @@ function LoginModal({ isOpen, onSubmit, openSignupModal }) {
       formName="login"
       isOpen={isOpen}
       handleSubmit={handleSubmit}
+      onClose={onClose}
     >
       <fieldset className="form__set">
         <label className="form__field">
