@@ -89,7 +89,6 @@ function App() {
   };
 
   const handleRegister = ({ name, avatar, email, password }) => {
-    console.log({email,password, name,avatar});
     signup({ name, avatar, email, password })
       .then((userData) => {
         console.log(userData);
