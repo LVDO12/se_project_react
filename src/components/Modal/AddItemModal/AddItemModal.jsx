@@ -19,7 +19,7 @@ function AddItemModal({ onClose, isOpen, onAddItem }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItem({ name, link, weatherType });
+    onAddItem({ name, imageUrl: link, weather: weatherType });
     onClose();
   };
 
@@ -65,7 +65,7 @@ function AddItemModal({ onClose, isOpen, onAddItem }) {
               type="radio"
               id="hot"
               name="weather"
-              className="form__radio-input form__input"
+              className="form__radio-input"
               value="hot"
               checked={weatherType === "hot"}
               onChange={(e) => setWeatherType(e.target.value)}
@@ -77,7 +77,7 @@ function AddItemModal({ onClose, isOpen, onAddItem }) {
               type="radio"
               id="warm"
               name="weather"
-              className="form__radio-input form__input"
+              className="form__radio-input"
               value="warm"
               checked={weatherType === "warm"}
               onChange={(e) => setWeatherType(e.target.value)}
@@ -89,7 +89,7 @@ function AddItemModal({ onClose, isOpen, onAddItem }) {
               type="radio"
               id="cold"
               name="weather"
-              className="form__radio-input form__input"
+              className="form__radio-input"
               value="cold"
               checked={weatherType === "cold"}
               onChange={(e) => setWeatherType(e.target.value)}

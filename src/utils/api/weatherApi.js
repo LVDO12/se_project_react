@@ -1,4 +1,4 @@
-import { checkResponse } from "./clothesApi";
+import { checkResponse } from "./apiConfig";
 
 export const getWeather = ({ latitude, longitude }, APIkey) => {
   return fetch(

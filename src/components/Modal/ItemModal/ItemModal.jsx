@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CurrentUserContext } from "../../../contexts/CurrentUserContext";
 import "./ItemModal.css";
 import "../ModalWithForm/ModalWithForm.css";
-import useModalClose from "../../hook/useModalClose";
-
+import useModalClose from "../../../hook/useModalClose";
 
 function ItemModal({ formName, isOpen, item, onClose, handleDeleteImage }) {
-
+  const currentUser = useContext(CurrentUserContext);
   useModalClose(isOpen, onClose);
+  
+  const isOwn = item && currentUser ? item.owner === currentUser._id : false;
 
   return (
     <div
@@ -27,12 +29,14 @@ function ItemModal({ formName, isOpen, item, onClose, handleDeleteImage }) {
           id="close-button"
           onClick={onClose}
         ></button>
-        <button
-          className="modal_type_garment__button_delete"
-          onClick={handleDeleteImage}
-        >
-          Delete Item
-        </button>
+        {isOwn && (
+          <button
+            className="modal_type_garment__button_delete"
+            onClick={handleDeleteImage}
+          >
+            Delete Item
+          </button>
+        )}
       </div>
     </div>
   );

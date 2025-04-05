@@ -1,32 +1,26 @@
+import { request } from "./apiConfig";
 const baseUrl = "http://localhost:3001";
-
-export const checkResponse = (res) => {
-  if (res.ok) {
-    return res.json();
-  }
-  return Promise.reject(`Error: ${res.status}`);
-};
-
-function request(url, option) {
-  return fetch(url, option).then(checkResponse);
-}
 
 export const getItems = () => {
   return request(`${baseUrl}/items`);
 };
 
-export const postItems = (item) => {
+export const postItems = (item, token) => {
   return request(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
     },
     body: JSON.stringify(item),
   })
 };
 
-export const deleteItems = (itemId) => {
+export const deleteItems = (itemId, token) => {
   return request(`${baseUrl}/items/${itemId}`, {
     method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`
+    },
   })
 };

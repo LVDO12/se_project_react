@@ -1,6 +1,6 @@
 import React from "react";
 import "./ModalWithForm.css";
-import useModalClose from "../../hook/useModalClose";
+import useModalClose from "../../../hook/useModalClose";
 
 function ModalWithForm({
   children,
@@ -31,7 +31,6 @@ function ModalWithForm({
           {children}
           <button
             className="modal__button_save "
-            id="save-button"
             type="submit"
           >
             {buttonText}

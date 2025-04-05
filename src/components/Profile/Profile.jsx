@@ -3,12 +3,21 @@ import "./Profile.css";
 import SideBar from "./SideBar/SideBar";
 import ClothesSection from "./ClothesSection/ClothesSection";
 
-function Profile({ handleOpenModal, handleOpenImage, clothingItems }) {
+function Profile({
+  handleOpenAddModal,
+  handleOpenImage,
+  clothingItems,
+  openEditProfileModal,
+  onLogout,
+}) {
   return (
     <div className="profile">
-      <SideBar />
+      <SideBar
+        openEditProfileModal={openEditProfileModal}
+        onLogout={onLogout}
+      />
       <ClothesSection
-        handleOpenModal={handleOpenModal}
+        handleOpenModal={handleOpenAddModal}
         handleOpenImage={handleOpenImage}
         clothingItems={clothingItems}
       />
