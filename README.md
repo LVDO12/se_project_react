@@ -7,6 +7,7 @@ The idea of the application is pretty simple - we make a call to an API, which t
 ## Links
 
 - [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
+- Click [here](https://github.com/LVDO12/se_project_express) for backend repo.
 
 ## This project is to create a server for the WTWR application. The project include some basic function:
 - Get images and users data.
