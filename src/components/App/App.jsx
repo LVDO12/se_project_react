@@ -103,7 +103,6 @@ function App() {
   const handleSignin = ({ email, password }) => {
     signin({ email, password })
       .then((data) => {
-        console.log(data);
         if (data && data.token) {
           setToken(data.token);
           getUserInfo(data.token)
@@ -168,9 +167,23 @@ function App() {
     const jwt = getToken();
     const itemsPromise = getItems();
     const weatherPromise = getWeather(location, APIkey);
-    const userPromise = jwt ? getUserInfo(jwt) : Promise.resolve(null);
 
-    Promise.all([itemsPromise, weatherPromise, userPromise])
+    if (jwt) {
+      getUserInfo(jwt)
+          .then((userRes) => {
+              if (userRes && userRes.data) {
+                  setIsLoggedIn(true);
+                  setUserData(userRes.data);
+              }
+          })
+          .catch(() => {
+              removeToken();
+              setIsLoggedIn(false);
+              setUserData(null);
+          });
+  }
+
+    Promise.all([itemsPromise, weatherPromise])
       .then(([itemsRes, weatherRes, userRes]) => {
         if (itemsRes && itemsRes.data) {
           setClothingItems(itemsRes.data);
@@ -184,15 +197,9 @@ function App() {
             data: weatherRes,
           });
         }
-        if (userRes && userRes.data) {
-          setUserData(userRes.data);
-        }
       })
       .catch((err) => {
         console.log(err);
-        // removeToken();
-        // setIsLoggedIn(false);
-        // setUserData(null);
       })
       .finally(() => setIsLoading(false));
   }, []);
