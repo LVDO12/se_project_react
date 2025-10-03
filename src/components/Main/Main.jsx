@@ -42,7 +42,7 @@ function Main({ weatherData, handleOpenModal, clothingItems, onCardLike }) {
               item={item}
               handleOpenModal={handleOpenModal}
               onCardLike={onCardLike}
-              isLiked={item.likes && item.likes.includes(currentUser._id)}
+              isLiked={item.likes && item.likes.includes(currentUser?._id)}
             />
           );
         })}

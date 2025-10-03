@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate} from "react-router-dom";
 
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -38,6 +38,7 @@ function App() {
   const [clothingItems, setClothingItems] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
+  const navigate = useNavigate();
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -127,6 +128,7 @@ function App() {
     editUserInfo(jwt, { name, avatar })
       .then((userData) => {
         setUserData(userData.data);
+        handleCloseModal();
       })
       .catch((err) => console.log(err));
   };
@@ -154,11 +156,10 @@ function App() {
   const handleLogout = () => {
     setIsLoggedIn(false);
     removeToken();
-    return <Navigate to="/" replace />;
+    navigate("/");
   };
 
   useEffect(() => {
-    removeToken();
     setIsLoggedIn(false);
     setUserData(null);
   }, []);
@@ -219,7 +220,6 @@ function App() {
               openSignupModal={() => {
                 handleOpenModal("signup");
               }}
-              user={userData}
               isLoggedIn={isLoggedIn}
             />
             <Routes>
