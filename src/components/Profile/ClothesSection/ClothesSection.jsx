@@ -3,7 +3,7 @@ import { CurrentUserContext } from "../../../contexts/CurrentUserContext";
 import "./ClothesSection.css";
 import ItemCard from "../../Main/ItemCard/ItemCard";
 
-function ClothesSection({ handleOpenModal, handleOpenImage, clothingItems }) {
+function ClothesSection({ handleOpenModal, handleOpenImage, clothingItems, onCardLike }) {
   const currentUser = useContext(CurrentUserContext);
   const userItem = clothingItems.filter(
     (item) => item.owner === currentUser._id
@@ -24,6 +24,8 @@ function ClothesSection({ handleOpenModal, handleOpenImage, clothingItems }) {
               key={item._id}
               item={item}
               handleOpenModal={handleOpenImage}
+              onCardLike={onCardLike}
+              isLiked={item.likes && item.likes.includes(currentUser?._id)}
             />
           );
         })}

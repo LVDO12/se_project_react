@@ -9,6 +9,7 @@ function Profile({
   clothingItems,
   openEditProfileModal,
   onLogout,
+  onCardLike,
 }) {
   return (
     <div className="profile">
@@ -20,6 +21,7 @@ function Profile({
         handleOpenModal={handleOpenAddModal}
         handleOpenImage={handleOpenImage}
         clothingItems={clothingItems}
+        onCardLike={onCardLike}
       />
     </div>
   );

@@ -244,6 +244,7 @@ function App() {
                       clothingItems={clothingItems}
                       openEditProfileModal={() => handleOpenModal("edit")}
                       onLogout={handleLogout}
+                      onCardLike={handleCardLike}
                     />
                   </ProtectedRoute>
                 }
